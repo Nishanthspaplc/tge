@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tejaswi Group - Empowering The Future of Mobility</title>
+  <script src="C:\Users\josyu\OneDrive\Desktop\tejeswi web\images\ChatGPT Image Aug 12, 2025, 03_06_45 PM 1.png"></script>
+  <style>
+    /* Global theme (single toggle) */
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+    :root {
+      /* Dark theme defaults */
+      --bg-color: #121212;
+      --text-color: #e5e7eb;
+      --highlight-color: #c94a46;
+      --nav-text-color: #e5e7eb;
+      --btn-primary-bg: #4b6eaf;
+      --btn-primary-hover-bg: #3a558a;
+      --btn-secondary-border: #4b6eaf;
+      --section-bg: #1e1e1e;
+      --arc-color: #2d3748;
+
+      /* Components used by other sections */
+      --card-bg: #283c39;          /* scooter/testimonials/newsletter cards */
+      --muted-text: #9ca3af;
+      --primary: #1e40af;
+      --primary-hover: #3b82f6;
+    }
+
+    body.light {
+      --bg-color: #ffffff;
+      --text-color: #111827;
+      --highlight-color: #be2c2c;
+      --nav-text-color: #111827;
+      --btn-primary-bg: #4b6eaf;
+      --btn-primary-hover-bg: #3a558a;
+      --btn-secondary-border: #4b6eaf;
+      --section-bg: #f3f4f6;
+      --arc-color: #c1cbd6;
+      --card-bg: #d0d1d3;
+      --muted-text: #6b7280;
+      --primary: #1e40af;
+      --primary-hover: #3b82f6;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      transition: background-color 0.3s, color 0.3s;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--nav-text-color);
+      background-color: inherit;
+      position: relative;
+      z-index: 100;
+    }
+
+    nav .brand {
+      font-weight: 600;
+      font-size: 1.125rem;
+      user-select: none;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--nav-text-color);
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: var(--btn-primary-bg);
+      outline: none;
+    }
+
+    .btn-contact {
+      background-color: var(--btn-primary-bg);
+      color: white;
+      padding: 0.5rem 1.75rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      user-select: none;
+    }
+
+    .btn-contact:hover,
+    .btn-contact:focus {
+      background-color: var(--btn-primary-hover-bg);
+      outline: none;
+    }
+
+    /* Global theme toggle button */
+    #themeToggleBtn {
+      margin-left: 1rem;
+      font-weight: 500;
+      font-size: 0.875rem;
+      background: none;
+      color: inherit;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Header section */
+    header {
+      padding: 2rem 2rem 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 2.75rem;
+      line-height: 1.1;
+      user-select: none;
+    }
+
+    header h1 .highlight { color: var(--highlight-color); }
+
+    /* Carousel container */
+    .carousel-container {
+      position: relative;
+      background: white;
+      margin: 1rem auto 3rem auto;
+      max-width: 1200px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow:
+        0 12px 15px -10px rgba(75, 110, 175, 0.3),
+        0 10px 10px -10px rgba(75, 110, 175, 0.2);
+      color: #111827;
+      height: 380px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 1.5rem 3rem 2rem 3rem;
+    }
+
+    .content-block {
+      background-color: var(--btn-primary-bg);
+      color: white;
+      padding: 1rem 1.25rem 1.5rem 1.25rem;
+      border-radius: 1rem;
+      max-width: 350px;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.19);
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      user-select: none;
+    }
+
+    .content-block h3 { font-weight: 900; font-size: 1rem; margin-bottom: 4px; }
+    .content-block .subtitle { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; margin-bottom: auto; }
+    .content-block a { color: white; font-weight: 400; text-decoration: underline; font-size: 0.85rem; align-self: flex-start; outline-offset: 2px; }
+    .content-block a:hover, .content-block a:focus { color: #d1e0f4; outline: none; }
+
+    .btn-group { margin-left: auto; display: flex; gap: 1rem; }
+
+    button.btn-primary-small {
+      background-color: var(--btn-primary-bg);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.875rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      box-shadow: 0 3px 6px rgba(75, 110, 175, 0.5);
+      transition: background-color 0.3s;
+      user-select: none;
+      min-width: 140px;
+      white-space: nowrap;
+    }
+    button.btn-primary-small:hover, button.btn-primary-small:focus { background-color: var(--btn-primary-hover-bg); outline: none; }
+
+    button.btn-outline-small {
+      background: transparent;
+      color: var(--btn-primary-bg);
+      border: 2px solid var(--btn-secondary-border);
+      padding: 0.5rem 1.5rem;
+      font-size: 0.875rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s, color 0.3s;
+      min-width: 120px;
+      white-space: nowrap;
+      user-select: none;
+    }
+    button.btn-outline-small:hover, button.btn-outline-small:focus { background-color: var(--btn-primary-bg); color: white; outline: none; }
+
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      box-shadow: 2px 4px 6px rgb(0 0 0 / 0.15);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+    .arrow-btn:hover, .arrow-btn:focus { background-color: var(--btn-primary-bg); outline: none; }
+    .arrow-left { left: 16px; }
+    .arrow-right { right: 16px; }
+    .arrow-btn svg { stroke: #111827; stroke-width: 2.25; width: 20px; height: 20px; transition: stroke 0.3s; }
+    .arrow-btn:hover svg, .arrow-btn:focus svg { stroke: white; }
+
+    /* Second section (hero with image) */
+    .second-section { background-color: var(--section-bg); padding: 4rem 0; margin-top: 3rem; }
+    .container { max-width: 1200px; margin: 0 auto; display: flex; gap: 60px; align-items: center; padding: 0 20px; }
+    .left { position: relative; width: 400px; height: 400px; background-color: var(--arc-color); border-radius: 40px; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+    .left::before { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 40px; box-sizing: border-box; border-top: 40px solid var(--arc-color); border-bottom: 40px solid var(--arc-color); border-left: 40px solid transparent; border-right: 40px solid transparent; pointer-events: none; }
+    .car-img { position: relative; max-width: 320px; max-height: 270px; object-fit: contain; z-index: 1; }
+    .right { flex: 1; }
+    .main-heading { font-size: 3.5rem; font-weight: 700; margin: 0 0 40px; color: var(--text-color); }
+    .main-heading .highlight { color: var(--highlight-color); }
+    .description { font-family: 'Arial', sans-serif; font-size: 1.3rem; line-height: 1.6; letter-spacing: 0.02em; color: var(--text-color); max-width: 680px; font-weight: 400; }
+    .description .highlight-red { color: var(--highlight-color); }
+    .btn { margin-top: 40px; background-color: var(--btn-primary-bg); color: white; padding: 12px 28px; border: none; border-radius: 30px; cursor: pointer; font-size: 1rem; font-family: 'Arial', sans-serif; transition: background-color 0.3s ease; }
+    .btn:hover, .btn:focus { background-color: var(--btn-primary-hover-bg); outline: none; }
+
+    /* Golf carts showcase specific tweaks */
+    .thumbs-nav.scrollbar-thin::-webkit-scrollbar { width: 6px; }
+    .thumbs-nav.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+    .thumbs-nav.scrollbar-thin::-webkit-scrollbar-thumb { background-color: #888; border-radius: 3px; }
+
+    /* Scooter card */
+    .card { display: flex; background-color: var(--card-bg); border-radius: 5px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+    .card-left { padding: 25px 20px; flex: 1.5; background-color: var(--card-bg); }
+    .card-left h2 { margin: 0 0 5px 0; font-weight: 700; font-size: 1.3rem; letter-spacing: 0.04em; }
+    .card-left h3 { margin: 0 0 16px 0; font-weight: 400; font-size: 0.85rem; text-transform: uppercase; color: var(--btn-primary-bg); }
+    .card-left p { font-size: 0.9rem; line-height: 1.4; margin-bottom: 22px; color: inherit; }
+    .buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+    .buttons button { background-color: var(--btn-primary-bg); border: none; color: #fff; padding: 9px 22px; font-weight: 600; font-size: 0.85rem; border-radius: 99px; cursor: pointer; transition: background-color 0.3s ease; }
+    .buttons button:hover { background-color: var(--btn-primary-hover-bg); }
+    .card-right { flex: 1.5; display: flex; background-color: var(--card-bg); position: relative; }
+    .scooter-image { width: 50%; background-color: var(--card-bg); display: flex; justify-content: center; align-items: center; }
+    .scooter-image img { width: 100%; max-width: 280px; height: auto; object-fit: contain; }
+    .specs { width: 50%; background-color: var(--card-bg); display: flex; flex-direction: column; justify-content: center; padding: 30px 20px; color: var(--text-color); font-weight: 600; }
+    .spec { margin-bottom: 25px; }
+    .spec .value { font-size: 1.4rem; line-height: 1rem; margin-bottom: 2px; }
+    .spec .label { font-size: 0.75rem; font-weight: 400; text-transform: uppercase; opacity: 0.8; display: flex; align-items: center; gap: 6px; }
+
+    /* Testimonials */
+    .testimonials-container { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 1200px; }
+    .testimonial-card { background-color: #444; padding: 20px; border-radius: 8px; flex: 1 1 320px; max-width: 480px; color: var(--text-color); box-sizing: border-box; transition: background-color 0.25s, color 0.25s; }
+    body.light .testimonial-card { background-color: #d3d3d3; color: #444; }
+    .testimonial-top { display: flex; align-items: center; margin-bottom: 15px; gap: 15px; }
+    .testimonial-logo { width: 60px; height: 60px; object-fit: contain; background: white; padding: 5px; border-radius: 5px; }
+    .testimonial-stars { display: flex; color: var(--highlight-color); gap: 3px; font-size: 1.1rem; }
+    .testimonial-company { font-weight: 700; font-size: 1.2rem; margin: 0; }
+    .testimonial-text { margin-top: 10px; font-weight: 500; color: inherit; }
+
+    /* Newsletter & footer */
+    .nl-container { max-width: 1200px; margin: auto; padding: 2rem 1rem; }
+    .newsletter { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between; border-bottom: 1px solid #444; padding-bottom: 2rem; }
+    body.light .newsletter { border-color: #ccc; }
+    .newsletter-text { flex: 1 1 350px; }
+    .newsletter-text small { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); }
+    .newsletter-text h2 { margin-top: 0.3rem; font-weight: 500; line-height: 1.3; font-size: 1.4rem; }
+    .newsletter-form { margin-top: 1rem; max-width: 350px; }
+    .newsletter-form label { display: block; color: inherit; font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .input-group { display: flex; }
+    .newsletter-form input[type="email"] { flex-grow: 1; padding: 0.5rem 1rem; border: none; border-bottom: 2px solid var(--primary); font-size: 1rem; background-color: transparent; color: inherit; transition: border-color 0.3s ease; }
+    .newsletter-form input[type="email"]::placeholder { color: #888; }
+    .newsletter-form input[type="email"]:focus { outline: none; border-color: var(--primary-hover); }
+    .subscribe-btn { background-color: var(--primary); color: white; padding: 0 1.2rem; border: none; cursor: pointer; font-weight: 600; border-radius: 20px; transition: background-color 0.3s ease; }
+    .subscribe-btn:hover { background-color: var(--primary-hover); }
+    .newsletter-image { flex: 1 1 300px; text-align: center; }
+    .newsletter-image img { width: 100%; max-width: 320px; height: auto; border-radius: 6px; object-fit: contain; }
+
+    footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #444; color: inherit; }
+    body.light footer { border-color: #ccc; }
+    .footer-content { max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+    .footer-col { flex: 1 1 160px; }
+    .footer-col h4 { font-weight: 700; font-size: 1rem; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
+    .footer-col ul li { margin-bottom: 0.7rem; }
+    .footer-col ul li a { color: inherit; text-decoration: none; }
+    .footer-col ul li a:hover { color: var(--primary-hover); }
+    .footer-contact { flex: 1 1 250px; font-size: 0.9rem; }
+    .footer-contact strong { font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 1rem; }
+    .contact-item { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+    .contact-item svg { fill: var(--primary); width: 18px; height: 18px; }
+    .footer-bottom { max-width: 1200px; margin: 3rem auto 1rem auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #888; }
+    .social-icons { display: flex; gap: 1rem; }
+    .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; text-decoration: none; transition: background-color 0.3s ease; }
+    .social-icons a:hover { background: var(--primary-hover); }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1rem; flex-wrap: wrap; }
+      nav ul { order: 3; width: 100%; justify-content: center; margin-top: 1rem; gap: 0.8rem; }
+      header h1 { font-size: 1.75rem; }
+      .carousel-container { height: 260px; padding: 1rem 1.5rem 1.5rem 1.5rem; border-radius: 8px; }
+      .content-block { max-width: 260px; font-size: 0.85rem; padding: 0.7rem 1rem 1rem 1rem; }
+      button.btn-primary-small, button.btn-outline-small { min-width: 100px; font-size: 0.75rem; padding: 0.4rem 1rem; }
+      .container { flex-direction: column; gap: 30px; margin: 40px auto; }
+      .left { width: 280px; height: 280px; border-radius: 30px; }
+      .left::before { border-top-width: 30px; border-bottom-width: 30px; border-left-width: 30px; border-right-width: 30px; border-radius: 30px; }
+      .car-img { max-width: 220px; max-height: 190px; }
+      .main-heading { font-size: 2rem; margin: 0 0 20px; }
+      .description { font-size: 1rem; }
+      .btn { margin-top: 20px; padding: 10px 20px; font-size: 0.9rem; }
+      .testimonials-container { flex-direction: column; gap: 20px; align-items: center; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      header h1 { font-size: 2.5rem; }
+      .carousel-container { height: 320px; padding: 1.25rem 2rem 1.75rem 2rem; border-radius: 10px; }
+      .content-block { max-width: 320px; padding: 0.85rem 1.1rem 1.2rem 1.1rem; }
+      .container { flex-direction: column; gap: 40px; }
+      .left { width: 350px; height: 350px; }
+      .main-heading { font-size: 2.8rem; margin: 0 0 30px; }
+      .description { font-size: 1.1rem; }
+    }
+
+    @media (max-width: 900px) {
+      .card { flex-direction: column; }
+      .card-left, .card-right { width: 100%; flex: none; }
+      .card-right { flex-direction: row; padding: 15px 10px; }
+      .scooter-image { width: 40%; padding-right: 10px; }
+      .specs { width: 60%; padding-left: 0; padding-top: 15px; }
+    }
+
+    @media (max-width: 600px) {
+      .card-right { flex-direction: column; align-items: center; padding: 10px; }
+      .scooter-image { width: 100%; padding-right: 0; margin-bottom: 20px; }
+      .specs { width: 100%; padding-left: 0; padding-top: 0; align-items: center; text-align: center; }
+      .spec { margin-bottom: 15px; }
+      .newsletter { flex-direction: column; padding-bottom: 1.5rem; }
+      .newsletter-form { max-width: 100%; margin-top: 1rem; }
+      .footer-content { flex-direction: column; gap: 1.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="Primary Navigation">
+    <div class="brand" tabindex="0">tejaswigroup.com</div>
+    <ul role="menubar" aria-label="Main menu">
+      <li role="none"><a href="#" role="menuitem" tabindex="0">Home</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0">About us</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0">Shop</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0">Rent</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0">Careers</a></li>
+    </ul>
+    <div style="display:flex; align-items:center;">
+      <button class="btn-contact" aria-label="Contact us" tabindex="0">Contact us</button>
+      <button id="themeToggleBtn" aria-label="Toggle light and dark theme" title="Toggle light and dark theme" tabindex="0">🌙</button>
+    </div>
+  </nav>
+
+  <header>
+    <h1 tabindex="0">DRIVE THE <span class="highlight">FUTURE</span><br />OF MOBILITY</h1>
+  </header>
+
+  <!-- Carousel section -->
+  <section class="carousel-container" aria-label="Featured models carousel" role="region">
+    <button class="arrow-btn arrow-left" aria-label="Previous" tabindex="0">
+      <svg fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <line x1="15" y1="6" x2="9" y2="12"></line>
+        <line x1="15" y1="18" x2="9" y2="12"></line>
+      </svg>
+    </button>
+    <button class="arrow-btn arrow-right" aria-label="Next" tabindex="0">
+      <svg fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <line x1="9" y1="6" x2="15" y2="12"></line>
+        <line x1="9" y1="18" x2="15" y2="12"></line>
+      </svg>
+    </button>
+
+    <article class="content-block" tabindex="0" aria-label="Golf Series model information">
+      <h3>GOLF SERIES</h3>
+      <div class="subtitle">PREMIUM COMFORT FOR THE PERFECT GAME</div>
+      <a href="#" tabindex="0">Explore Our Models</a>
+    </article>
+
+    <div class="btn-group">
+      <button class="btn-primary-small" tabindex="0">Explore Our Models</button>
+      <button class="btn-outline-small" tabindex="0">Learn More</button>
+    </div>
+  </section>
+
+  <!-- Second hero section -->
+  <section class="second-section">
+    <div class="container">
+      <div class="left">
+        <img class="car-img" src="C:\Users\josyu\OneDrive\Desktop\tejeswi web\images\ChatGPT Image Aug 12, 2025, 03_06_45 PM 1.png" alt="Electric Car" />
+      </div>
+      <div class="right">
+        <h1 class="main-heading">EMPOWERING THE <span class="highlight">FUTURE</span> OF MOBILITY</h1>
+        <p class="description">
+          <span class="highlight-red">AT TGE</span>, TEJASWI GREEN ENERGY PVT. LTD. (ERSTWHILE TEJASWI AUTOMOBILE) IS THE FLAGSHIP COMPANY IN TEJASWI GROUP. WE ARE INTO VARIOUS INDUSTRIES VIZ: AUTOMOBILE, IT, ITES, CONSULTING AND MANAGEMENT. THE EV SBU IS PIONEER IN INDIA PROVIDING 3S (SALES, SERVICE, & SPARES) OF MULTI BRAND BATTERY OPERATED VEHICLES. THESE BATTERY-OPERATED ELECTRIC VEHICLES ARE OF INTERNATIONAL STANDARDS FOR INTERNAL TRANSPORTATION. OUR ENGINEERING FACILITY IS BASED OUT OF HYDERABAD AND HAS BEEN IN BUSINESS SINCE 2007.
+        </p>
+        <button class="btn">Learn More About Tejeswi</button>
+      </div>
+    </div>
+  </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Electric Golf Carts Showcase</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Custom scrollbar for left thumbnail nav */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body class="transition-colors duration-500 bg-gray-900 text-white">
+
+<div class="min-h-screen flex flex-col items-center px-4 md:px-10 lg:px-24 py-12">
+  <!-- Theme Toggle Button -->
+  <!-- <div class="w-full flex justify-end mb-8">
+    <button id="theme-toggle" aria-label="Toggle Light/Dark Theme" class="bg-gray-700 dark:bg-gray-300 rounded px-4 py-2 text-sm font-semibold transition-colors duration-300 hover:bg-gray-600 dark:hover:bg-gray-400 focus:outline-none">
+      Light Mode
+    </button>
+  </div> -->
+
+  <h1 class="text-center font-mono text-xl md:text-2xl lg:text-3xl font-semibold mb-14 max-w-4xl">
+    FROM EFFICIENT CAMPUS SHUTTLES TO VERSATILE GOLF CARTS, RIDE IN STYLE AND PURPOSE
+  </h1>
+
+  <!-- electric golf cart cards  -->
+<!DOCTYPE html>
+<html lang="en" class="dark antialiased">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electric Golf Cart and Bus</title>
+  <style>
+    /* === RESET & BASE === */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Geist Sans", sans-serif; line-height: 1.5; }
+
+    :root {
+      --background: #111;
+      --foreground: #f9f9f9;
+      --primary: #1f2a44;
+      --panel-left: #28433c;
+      --panel-right: #e8e6e3;
+      --heading: #0f0f10;
+      --radius: 10px;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--foreground);
+    }
+
+    img { max-width: 100%; display: block; }
+
+    /* === LAYOUT === */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid #333;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #222;
+    }
+    @media (min-width: 768px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === LEFT PANEL === */
+    .left-panel {
+      background: var(--panel-left);
+      padding: 1.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center the image */
+      justify-content: center; /* Center the image vertically */
+      min-height: 500px; /* Ensure panel has sufficient height */
+    }
+    .thumb-rail {
+      position: absolute;
+      top: 1rem;
+      left: 0.5rem;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90%;
+      background: rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 0.5rem;
+      z-index: 2;
+    }
+    .thumb-rail button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    .thumb-rail img {
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    @media (min-width: 768px) {
+      .thumb-rail { display: flex; }
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 600px; /* Limit image width */
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* === RIGHT PANEL === */
+    .right-panel {
+      background: var(--panel-right);
+      color: #111;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center content vertically */
+    }
+    .right-panel h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .right-panel p.subtitle {
+      font-size: 0.75rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    .right-panel .desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+    }
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: 1px solid #333;
+      transition: 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-outline { background: transparent; color: #111; }
+    .btn-primary { background: var(--primary); color: #fff; border: none; }
+  </style>
+</head>
+<body>
+  <main class=" w-full">
+    <section class="container">
+      <div class="grid">
+        <!-- LEFT PANEL - Only image remains -->
+        <div class="left-panel">
+          <!-- Main Image -->
+          <div class="main-image">
+            <!-- Using a placeholder image since the original path was local -->
+            <img src="C:\Users\josyu\OneDrive\Desktop\tejeswi web\images\ChatGPT Image Aug 14, 2025, 11_13_50 AM.png" />
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL - Unchanged -->
+        <div class="right-panel">
+          <h1>ELECTRIC GOLF CART AND BUS</h1>
+          <p class="subtitle">V-MODEL 01</p>
+          <div class="desc">
+            <p>Quisque dui amet at interdum ornare. Mattis turpis vulputate eu metus leo phasellus viverra dui eget.</p>
+            <p>Integer purus turpis sem eu ut a in sapien ac viverra. mkijweij kmkmekcmc m mdeqmd nishany jde ijjjnehue.</p>
+            <p>djdnjdudm niaqiuynohn msisjhhe.</p>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-outline">More Detail</button>
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+<!-- second electric cart cardd -->
+<!DOCTYPE html>
+<html lang="en" class="dark antialiased">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electric Golf Cart and Bus</title>
+  <style>
+    /* === RESET & BASE === */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Geist Sans", sans-serif; line-height: 1.5; }
+
+    :root {
+      --background: #111;
+      --foreground: #f9f9f9;
+      --primary: #1f2a44;
+      --panel-left: #28433c;
+      --panel-right: #e8e6e3;
+      --heading: #0f0f10;
+      --radius: 10px;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--foreground);
+    }
+
+    img { max-width: 100%; display: block; }
+
+    /* === LAYOUT === */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid #333;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #222;
+    }
+    @media (min-width: 768px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === LEFT PANEL === */
+    .left-panel {
+      background: var(--panel-left);
+      padding: 1.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center the image */
+      justify-content: center; /* Center the image vertically */
+      min-height: 500px; /* Ensure panel has sufficient height */
+    }
+    .thumb-rail {
+      position: absolute;
+      top: 1rem;
+      left: 0.5rem;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90%;
+      background: rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 0.5rem;
+      z-index: 2;
+    }
+    .thumb-rail button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    .thumb-rail img {
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    @media (min-width: 768px) {
+      .thumb-rail { display: flex; }
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 600px; /* Limit image width */
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* === RIGHT PANEL === */
+    .right-panel {
+      background: var(--panel-right);
+      color: #111;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center content vertically */
+    }
+    .right-panel h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .right-panel p.subtitle {
+      font-size: 0.75rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    .right-panel .desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+    }
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: 1px solid #333;
+      transition: 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-outline { background: transparent; color: #111; }
+    .btn-primary { background: var(--primary); color: #fff; border: none; }
+  </style>
+</head>
+<body>
+  <main class="w-full">
+    <section class="container">
+      <div class="grid">
+        <!-- LEFT PANEL - Only image remains -->
+        <div class="left-panel">
+          <!-- Main Image -->
+          <div class="main-image">
+            <!-- Using a placeholder image since the original path was local -->
+            <img src="C:\Users\josyu\OneDrive\Desktop\tejeswi web\images\ChatGPT Image Aug 14, 2025, 11_17_55 AM.png" />
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL - Unchanged -->
+        <div class="right-panel">
+          <h1>ELECTRIC GOLF CART</h1>
+          <p class="subtitle">V-MODEL 01</p>
+          <div class="desc">
+            <p>Quisque dui amet at interdum ornare. Mattis turpis vulputate eu metus leo phasellus viverra dui eget.</p>
+            <p>Integer purus turpis sem eu ut a in sapien ac viverra. mkijweij kmkmekcmc m mdeqmd nishany jde ijjjnehue.</p>
+            <p>djdnjdudm niaqiuynohn msisjhhe.</p>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-outline">More Detail</button>
+            <button class="btn btn-primary">Rent Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+  <!-- Below content: view more button -->
+  <div class="mt-12 w-full max-w-xs md:max-w-sm lg:max-w-md text-center">
+    <button class="bg-red-600 hover:bg-red-700 rounded-full px-6 py-3 font-semibold text-white text-sm md:text-base transition-colors focus:outline-none focus:ring-2 focus:ring-red-400" aria-label="View more golf carts and shuttles">
+      VIEW MORE &raquo;
+    </button>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Initialize theme based on prefers-color-scheme or default dark
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(localStorage.getItem('theme') === 'light'){
+      body.classList.remove('dark');
+      themeToggleBtn.textContent = 'Dark Mode';
+    } else if(localStorage.getItem('theme') === 'dark' || userPrefersDark) {
+      body.classList.add('dark');
+      themeToggleBtn.textContent = 'Light Mode';
+    } else {
+      themeToggleBtn.textContent = 'Dark Mode';
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      if(body.classList.contains('dark')){
+        body.classList.remove('dark');
+        themeToggleBtn.textContent = 'Dark Mode';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.add('dark');
+        themeToggleBtn.textContent = 'Light Mode';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Golf carts data for swapping content
+    const carts = [
+      {
+        title: "ELECTRIC GOLF CART AND BUS",
+        description: `Quique dui amet at interdum ornare. Mattis turpis vulputate eu metus leo phasellus viverra dui eget. Integer purus turpis sen eu ut a in sapien ac viverra malesuada.
+        <br><br>
+        Mikyeajj krnkmekcmc m mdeqed nihsnay jde fljneede. Ajdoiddo misquxyhon misnjhhe.`,
+        range: "100 KM",
+        power: "150 KW",
+        speed: "70 MPH",
+        imageSrc: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/477494f3-736e-427c-b1ea-55a382fa0982.png",
+        thumbnailAlt: "Black electric golf cart with roof and headlight, angled side view on asphalt"
+      },
+      {
+        title: "ELECTRIC GOLF CART AND BUS",
+        description: `Quique dui amet at interdum ornare. Mattis turpis vulputate eu metus leo phasellus viverra dui eget. Integer purus turpis sen eu ut a in sapien ac viverra malesuada.
+        <br><br>
+        Mikyeajj krnkmekcmc m mdeqed nihsnay jde fljneede. Ajdoiddo misquxyhon misnjhhe.`,
+        range: "100 KM",
+        power: "150KW",
+        speed: "70 MPH",
+        imageSrc: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3293bcb2-1ac2-4c77-9aa9-12a54e3cc136.png",
+        thumbnailAlt: "White electric golf cart with roof and headlight, angled side view on asphalt"
+      }
+    ];
+
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.getElementById('main-image');
+    const cartTitle = document.getElementById('cart-title');
+    const cartDescription = document.getElementById('cart-description');
+    const rangeElem = document.querySelector('.flex > div:nth-child(1) span.font-bold');
+    const powerElem = document.querySelector('.flex > div:nth-child(2) span.font-bold');
+    const speedElem = document.querySelector('.flex > div:nth-child(3) span.font-bold');
+
+    function updateCart(index) {
+      const cart = carts[index];
+      // Update main image and alt
+      mainImage.src = cart.imageSrc;
+      mainImage.alt = cart.thumbnailAlt;
+
+      // Update text and detail data
+      cartTitle.textContent = cart.title;
+      cartDescription.innerHTML = cart.description;
+      rangeElem.textContent = cart.range;
+      powerElem.textContent = cart.power;
+      speedElem.textContent = cart.speed;
+
+      // Update thumbnail aria-pressed states & borders
+      thumbnails.forEach((btn, i) => {
+        if(i === index) {
+          btn.classList.add('border-blue-600');
+          btn.setAttribute('aria-pressed', 'true');
+        } else {
+          btn.classList.remove('border-blue-600');
+          btn.setAttribute('aria-pressed', 'false');
+        }
+      });
+    }
+
+    thumbnails.forEach((btn, i) => {
+      btn.addEventListener('click', () => updateCart(i));
+      btn.addEventListener('keypress', (e) => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          updateCart(i);
+        }
+      });
+    });
+
+    // Initialize to first cart
+    updateCart(0);
+  })();
+</script>
+</body>
+</html>
+  <!-- Scooter card -->
+  <div class="nl-container" style="padding-top: 0;">
+    <h1 class="text-center text-2xl md:text-3xl font-medium mb-6" style="font-family: Arial, sans-serif;">FROM STYLISH CITY RIDES TO HIGH-POWERED ELECTRIC SCOOTERS, FIND YOUR PERFECT COMPANION</h1>
+    <section class="card" aria-label="Electric Scooter Information Card">
+      <div class="card-left">
+        <h2>ELECTRIC-SCOOTY</h2>
+        <h3>V-MODEL 01</h3>
+        <p>Quisque dui amet at interdum ornare. Mattis turpis vulputate eu metus leo phasellus viverra dui eget. Integer purus turpis sem eu ut a in sapien ac viverra mkijweij krmknekcmc m mdeqmd nishany jde jjjnehu e djjdnjdudm niaquiynohn msisjhhe.</p>
+        <div class="buttons">
+          <button type="button">More Detail</button>
+          <button type="button">Buy Now</button>
+          <button type="button">Rent Now</button>
+        </div>
+      </div>
+      <div class="card-right" aria-label="Scooter Image and Specifications">
+        <div class="scooter-image">
+          <img src="C:\Users\josyu\OneDrive\Desktop\tejeswi web\images\WhatsApp Image 2025-09-02 at 16.46.55_ba80521d.jpg" alt="Red Electric Scooter Front View" />
+        </div>
+        <div class="specs">
+          <div class="spec">
+            <div class="value">80 MPH</div>
+            <div class="label">TOP SPEED</div>
+          </div>
+          <div class="spec">
+            <div class="value">150 KM</div>
+            <div class="label">RANGE UP TO</div>
+          </div>
+          <div class="spec">
+            <div class="value">50 KW</div>
+            <div class="label">POWER UP TO</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="testimonials-container" role="list">
+    <article class="testimonial-card" role="listitem" tabindex="0">
+      <div class="testimonial-top">
+        <img src="https://i.ibb.co/Nm0kCVv/vajram-logo.png" alt="Vajram Constructions logo" class="testimonial-logo" />
+        <div class="testimonial-stars" aria-label="Five star rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      </div>
+      <h2 class="testimonial-company">VAJRAM CONSTRUCTIONS</h2>
+      <p class="testimonial-text">I NEVER THOUGHT AN EV COULD HANDLE ROAD TRIPS SO WELL. THE RANGE AND FAST-CHARGING OPTIONS ARE INCREDIBLE!</p>
+    </article>
+    <article class="testimonial-card" role="listitem" tabindex="0">
+      <div class="testimonial-top">
+        <img src="https://i.ibb.co/HKX1zK7/irctc-logo.png" alt="IRCTC Railways logo" class="testimonial-logo" />
+        <div class="testimonial-stars" aria-label="Five star rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      </div>
+      <h2 class="testimonial-company">IRCTC RAILWAYS</h2>
+      <p class="testimonial-text">VOLTERRA HAS COMPLETELY TRANSFORMED MY DAILY COMMUTE. I SAVE TIME, MONEY, AND FEEL GREAT KNOWING I'M CONTRIBUTING TO A GREENER PLANET.</p>
+    </article>
+  </div>
+
+  <!-- Newsletter & Footer -->
+  <div class="nl-container">
+    <section class="newsletter" aria-label="Newsletter signup">
+      <div class="newsletter-text">
+        <small>Stay <a href="#">Connected</a> with Tejaswi</small>
+        <h2>Be the first to know about our latest models, EV news, and exclusive offers. Sign up for our newsletter today!</h2>
+        <form class="newsletter-form" aria-label="Subscribe to newsletter">
+          <label for="email">Your Email</label>
+          <div class="input-group">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <button type="submit" class="subscribe-btn" aria-label="Subscribe to newsletter">Subscribe</button>
+          </div>
+        </form>
+      </div>
+      <div class="newsletter-image">
+        <img src="https://i.ibb.co/Ky52jKK/evcart-front.png" alt="EV Cart Scooter Front View" />
+      </div>
+    </section>
+  </div>
+
+  <footer role="contentinfo" aria-label="Footer information">
+    <div class="footer-content nl-container" style="padding-top:0; padding-bottom:0;">
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Rent</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Charging Solutions</a></li>
+          <li><a href="#">Warranty & Services</a></li>
+          <li><a href="#">EV Tutorials</a></li>
+          <li><a href="#">Contact Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Accessibility Statement</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <strong>Tejeswi</strong>
+        <div class="contact-item" aria-label="Phone">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.55.57 1 1 0 011 1v3.59a1 1 0 01-1 1A16 16 0 014 6a1 1 0 011-1h3.59a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.21 1.11z"/></svg>
+          <span>+1 (800) 123-4567</span>
+        </div>
+        <div class="contact-item" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l7.49 5.26a1 1 0 001.02 0L20 8v10H4z"/></svg>
+          <a href="mailto:support@tejaswi.com" aria-label="Support email">support@tejaswi.com</a>
+        </div>
+        <p style="margin-top:1rem; font-size:0.8rem; color:#888;">
+          Electric Vehicles Template Kit by Omispace<br />
+          © 2025. All rights reserved.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom nl-container">
+      <span>© 2025 Tejeswi</span>
+      <div class="social-icons" aria-label="Social media links">
+        <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.597 0 .012.585.012 1.308v21.384C.012 23.414.597 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.462.099 2.794.144v3.24l-1.918.001c-1.505 0-1.796.715-1.796 1.763v2.313h3.59l-.467 3.622h-3.123V24h6.116c.729 0 1.312-.585 1.312-1.308V1.308c0-.723-.583-1.308-1.312-1.308z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.9 9.9 0 01-2.828.775 4.932 4.932 0 002.165-2.724c-.951.564-2.005.975-3.127 1.195a4.916 4.916 0 00-8.379 4.482A13.939 13.939 0 011.671 3.149a4.917 4.917 0 001.523 6.573 4.897 4.897 0 01-2.224-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.217.084 4.917 4.917 0 004.588 3.417A9.867 9.867 0 010 19.54a13.914 13.914 0 007.548 2.209c9.057 0 14.009-7.507 14.009-14.009 0-.213-.005-.426-.014-.637A10.012 10.012 0 0024 4.557z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.849-3.037-1.849 0-2.132 1.445-2.132 2.939v5.667h-3.554v-11.5h3.413v1.571h.049c.476-.9 1.637-1.849 3.372-1.849 3.605 0 4.27 2.372 4.27 5.457v6.321zM5.337 8.991c-1.144 0-2.07-.928-2.07-2.072 0-1.145.926-2.071 2.07-2.071s2.07.926 2.07 2.071c0 1.144-.926 2.072-2.07 2.072zm1.778 11.461H3.559v-11.5h3.556v11.5zM22.225 0H1.771C.792 0 0 .771 0 1.717v20.565C0 23.225.792 24 1.771 24h20.451c.979 0 1.778-.775 1.778-1.718V1.717C24 .77 23.203 0 22.225 0z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184a2.63 2.63 0 00-1.854-1.867C15.754 1 12 1 12 1s-3.757 0-5.762.317a2.63 2.63 0 00-1.854 1.867C4 5.196 4 8.993 4 8.993s0 3.801.384 5.81a2.633 2.633 0 001.854 1.859c2.006.32 5.762.32 5.762.32s3.752 0 5.762-.32a2.634 2.634 0 001.854-1.859c.388-2.006.388-5.81.388-5.81s0-3.797-.388-5.808zM10 13.57V6.423l5.507 3.574L10 13.57z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Single global theme toggle (default dark)
+    (function() {
+      const btn = document.getElementById('themeToggleBtn');
+      const body = document.body;
+
+      function setTheme(theme) {
+        if (theme === 'light') {
+          body.classList.add('light');
+          btn.textContent = '🌚';
+        } else {
+          body.classList.remove('light');
+          btn.textContent = '🌙';
+        }
+        localStorage.setItem('theme', theme);
+      }
+
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      setTheme(savedTheme);
+
+      btn.addEventListener('click', () => {
+        const next = body.classList.contains('light') ? 'dark' : 'light';
+        setTheme(next);
+      });
+    })();
+
+    // Golf carts data for swapping content
+    (function() {
+      const carts = [
+        {
+          title: "ELECTRIC GOLF CART AND BUS",
+          description: `Quique dui amet at interdum ornare. Mattis turpis vulputate eu metus leo phasellus viverra dui eget. Integer purus turpis sen eu ut a in sapien ac viverra malesuada.<br><br>Mikyeajj krnkmekcmc m mdeqed nihsnay jde fljneede. Ajdoiddo misquxyhon misnjhhe.`,
+          range: "100 KM",
+          power: "150 KW",
+          speed: "70 MPH",
+          imageSrc: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/477494f3-736e-427c-b1ea-55a382fa0982.png",
+          thumbnailAlt: "Black electric golf cart with roof and headlight, angled side view on asphalt"
+        },
+        {
+          title: "ELECTRIC GOLF CART AND BUS",
+          description: `Quique dui amet at interdum ornare. Mattis turpis vulputate eu metus leo phasellus viverra dui eget. Integer purus turpis sen eu ut a in sapien ac viverra malesuada.<br><br>Mikyeajj krnkmekcmc m mdeqed nihsnay jde fljneede. Ajdoiddo misquxyhon misnjhhe.`,
+          range: "100 KM",
+          power: "150KW",
+          speed: "70 MPH",
+          imageSrc: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3293bcb2-1ac2-4c77-9aa9-12a54e3cc136.png",
+          thumbnailAlt: "White electric golf cart with roof and headlight, angled side view on asphalt"
+        }
+      ];
+
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      const mainImage = document.getElementById('main-image');
+      const cartTitle = document.getElementById('cart-title');
+      const cartDescription = document.getElementById('cart-description');
+      const statBoxes = document.querySelectorAll('.flex.gap-6 > div span.font-bold');
+
+      function updateCart(index) {
+        const cart = carts[index];
+        mainImage.src = cart.imageSrc;
+        mainImage.alt = cart.thumbnailAlt;
+        cartTitle.textContent = cart.title;
+        cartDescription.innerHTML = cart.description;
+        if (statBoxes.length >= 3) {
+          statBoxes[0].textContent = cart.range;
+          statBoxes[1].textContent = cart.power;
+          statBoxes[2].textContent = cart.speed;
+        }
+        thumbnails.forEach((btn, i) => {
+          if (i === index) {
+            btn.classList.add('border-blue-600');
+            btn.setAttribute('aria-pressed', 'true');
+          } else {
+            btn.classList.remove('border-blue-600');
+            btn.setAttribute('aria-pressed', 'false');
+          }
+        });
+      }
+
+      thumbnails.forEach((btn, i) => {
+        btn.addEventListener('click', () => updateCart(i));
+        btn.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            updateCart(i);
+          }
+        });
+      });
+
+      updateCart(0);
+    })();
+
+    // Newsletter demo submit
+    (function() {
+      const form = document.querySelector('.newsletter-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          alert('Thank you for subscribing!');
+          e.target.reset();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
